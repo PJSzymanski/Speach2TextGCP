@@ -1,0 +1,18 @@
+#Script for Alpha version
+
+gcloud alpha ml speech recognize-long-running \
+    'gs://yourfolder/you-file.flac' \ #path to file at your clod storage
+    --encoding='flac' \
+    --language-code='en-US' \
+    --enable-automatic-punctuation \
+    >output.json
+
+#Script for Beta version
+
+gcloud beta ml speech recognize-long-running \
+        'gs://yourfolder/you-file.flac' \ #path to file at your clod storage
+        --encoding='flac' \
+        --language-code='en-US' \
+        --enable-speaker-diarization \
+        --diarization-speaker-count='2'\
+        >output.json
