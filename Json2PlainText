@@ -1,11 +1,10 @@
 import json
-filename = "pabeta_2sp.json"
+filename = "yourJSONfile.json"
 
 with open(filename) as data_file:
     read_content = json.load(data_file)
     data = read_content
 
-#Działający
 def get_transcript():
         result_access = read_content['results']
         for alternatives_data in result_access:
