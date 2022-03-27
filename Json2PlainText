@@ -1,0 +1,16 @@
+import json
+filename = "pabeta_2sp.json"
+
+with open(filename) as data_file:
+    read_content = json.load(data_file)
+    data = read_content
+
+#Działający
+def get_transcript():
+        result_access = read_content['results']
+        for alternatives_data in result_access:
+            transcript_acces = alternatives_data['alternatives']
+            for transcript_data in transcript_acces:
+                transcript = transcript_data['transcript']
+                print(transcript)
+get_transcript()
